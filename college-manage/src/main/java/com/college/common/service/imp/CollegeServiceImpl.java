@@ -19,11 +19,11 @@ public class CollegeServiceImpl implements CollegeService {
 
     @Override
     public List<College> getList() {
-        return null;
+        return collegeMapper.selectAll();
     }
 
     @Override
     public boolean addCollege(College college) {
-        return false;
+        return collegeMapper.insertSelective(college) > 0 ? true : false;
     }
 }

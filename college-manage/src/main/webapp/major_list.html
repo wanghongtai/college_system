@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>专业列表</title>
+    <link rel="stylesheet" href="layui-v2.5.6/css/layui.css" media="all">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center">专业类表信息</h2>
+
+    <!--专业列表-->
+    <div>
+        <form id="majorListForm" class="layui-form" lay-filter="majorListForm">
+            <div class="layui-form-item" style="float: right">
+                <div class="layui-inline">
+                        <!--学院列表-->
+                    <div class="layui-form-item" style="float: left">
+                        <label class="layui-form-label">学院名称：</label>
+                        <div class="layui-input-block">
+                            <select id="cidSelect_search" name="cid">
+                                <option value="0">请选择学院</option>
+                                <option value="1">写作</option>
+                                <option value="2">阅读</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <a class="layui-btn" id="searchBtn">查询</a>
+                    <a class="layui-btn" id="toAddMajorBtn">添加</a>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </form>
+
+        <div style="margin-top: -20px">
+            <table id="demo" lay-filter="demo"></table>
+        </div>
+
+        <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+    </div>
+
+
+    <!--添加专业弹框 -->
+    <form id="majorAddForm" class="layui-form" lay-filter="majorAddForm"
+          style="width: 400px;padding:10px;display: none"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <h2 style="text-align: center">添加专业</h2>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*专业名称：</label>
+            <div class="layui-input-block">
+                <input type="text"  name="mname" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*学分：</label>
+            <div class="layui-input-block">
+                <input type="text" name="credit" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">*毕业年限：</label>
+            <div class="layui-input-block">
+                <input type="text" name="lifeyear" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text" >
+            <label class="layui-form-label">专业介绍：</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" name="introduction" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item" >
+            <label class="layui-form-label">*学院名称：</label>
+            <div class="layui-input-block">
+                <select id="cidSelect" name="cid" value="" lay-verify="required">
+                    <option value="0">请选择学院</option>
+                    <option value="1">写作</option>
+                    <option value="2">阅读</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <!--<a class="layui-btn" id="addMajorBtn">立即提交</a>-->
+                <button id="addMajorBtn" lay-submit="" lay-filter="addMajorBtn" class="layui-btn layui-btn-normal">提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+
+
+</body>
+
+<script src="layui-v2.5.6/layui.js"></script>
+<script src="js/major_list.js"></script>
+</html>
