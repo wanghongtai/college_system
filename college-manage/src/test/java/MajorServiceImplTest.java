@@ -29,14 +29,14 @@ public class MajorServiceImplTest {
     @Test
     public void add(){
 
-        for(int i=0; i<20; i++){
+//        for(int i=0; i<20; i++){
             Major major = new Major();
-            major.setMname("测试"+(i+1));
-            major.setLifeyear(3);
-            major.setCid(2);
-            major.setCredit(20);
+            major.setMname("测试");
+//            major.setLifeyear(3);
+//            major.setCid(2);
+//            major.setCredit(20);
             System.out.println(majorService.add(major));
-        }
+//        }
     }
 
     @Test

@@ -51,8 +51,8 @@ public class MajorController {
     @ResponseBody
     @RequestMapping("/add")
     public RespBean add(Major major){
-        //System.out.println("===========================add=================");
-        //System.out.println(major);
+        System.out.println("===========================add=================");
+        System.out.println(major);
         try {
             if(majorService.add(major)){
                 return RespBean.ok("添加成功");
